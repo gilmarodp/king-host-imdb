@@ -20,10 +20,16 @@ const loginForm = reactive(
     password: '',
   }
 );
+
+const emit = defineEmits([
+  'update:showLogin',
+  'handleLogin',
+]);
 </script>
 
 <template>
-  <div v-if="showLogin" @click.self="$emit('showLogin', false)" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+  <div v-if="showLogin" @click.self="$emit('update:showLogin', false)"
+       class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
     <div class="bg-surface dark:bg-dark-surface p-8 rounded-lg shadow-xl w-full max-w-md">
       <h2 class="text-2xl font-bold text-text-primary dark:text-dark-text-primary mb-6">
         Login

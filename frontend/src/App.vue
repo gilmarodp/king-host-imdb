@@ -71,7 +71,7 @@ import SearchView from '@/components/SearchView.vue';
 import FavoritesView from '@/components/FavoritesView.vue';
 import NavBar from "@/NavBar.vue";
 import LoginModal from "@/components/modals/LoginModal.vue";
-import RegisterModal from "@/RegisterModal.vue";
+import RegisterModal from "@/components/modals/RegisterModal.vue";
 
 const currentView = ref('search');
 const favorites = ref([]);
