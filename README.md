@@ -38,8 +38,11 @@ Antes de começar, certifique-se de ter os seguintes softwares instalados:
 Se você ainda não o fez, clone este repositório para a sua máquina local.
 
 ```bash
- git clone https://github.com/gilmarodp/king-host-imdb.git
- cd king-host-imdb
+git clone https://github.com/gilmarodp/king-host-imdb.git
+```
+
+```bash
+cd king-host-imdb
 ```
 
 #### b. Configuração do Backend (Laravel)
@@ -48,14 +51,19 @@ O Laravel precisa de um arquivo de ambiente `.env` para funcionar.
 
 1.  **Navegue até a pasta do backend:**
     ```bash
-     cd backend
+    cd backend
     ```
 
 2.  **Copie o arquivo de exemplo `.env.example`:**
     ```bash
-     cp .env.example .env
+    cp .env.example .env
     ```
     *Este comando cria um novo arquivo `.env` a partir do exemplo. Para este projeto, as configurações padrão já são suficientes para rodar com Docker e MySQL, então não são necessárias mais alterações neste arquivo.*
+3. **Volte para a raiz do projeto:**
+    ```bash
+    cd ..
+    ```
+
 
 #### c. Configuração do Frontend (Vue.js)
 
@@ -63,12 +71,12 @@ O frontend precisa de uma chave de API do The Movie Database (TMDB) para buscar 
 
 1.  **Navegue até a pasta do frontend:**
     ```bash
-     cd frontend
+    cd frontend
     ```
 
 2.  **Copie o arquivo de exemplo `.env.example`:**
     ```bash
-     cp .env.example .env
+    cp .env.example .env
     ```
 
 3.  **Obtenha sua chave de API:**
@@ -79,9 +87,15 @@ O frontend precisa de uma chave de API do The Movie Database (TMDB) para buscar 
     - Abra o arquivo: `frontend/.env`
     - Encontre a seguinte linha (aproximadamente na linha 2):
       ```dotenv
-       VITE_TMDB_API_KEY="COLE_AQUI_SUA_API_KEY_TMDB"
+      VITE_TMDB_API_KEY="COLE_AQUI_SUA_API_KEY_TMDB"
       ```
     - Substitua `"COLE_AQUI_SUA_API_KEY_TMDB"` pela sua chave de API real.
+
+5. **Volte para a raiz do projeto:**
+    ```bash
+    cd ..
+    ```
+
 
 ### 3. Iniciando a Aplicação
 
@@ -91,20 +105,20 @@ Com tudo configurado, agora vamos iniciar os contêineres Docker.
 
 2.  **Inicie os contêineres em background:**
     ```bash
-     docker-compose up -d --build
+    docker-compose up -d --build
     ```
     *O comando `--build` garante que as imagens Docker sejam construídas do zero, aplicando todas as configurações.*
 
 3.  **Gere a chave da aplicação Laravel:**
     *Após os contêineres estarem rodando, execute o seguinte comando para gerar a `APP_KEY` necessária para o Laravel.*
     ```bash
-     docker-compose exec app php artisan key:generate
+    docker-compose exec app php artisan key:generate
     ```
 
 4.  **Execute as migrações do banco de dados:**
     *Este comando criará as tabelas no banco de dados MySQL.*
     ```bash
-     docker-compose exec app php artisan migrate
+    docker-compose exec app php artisan migrate
     ```
 
 ### 4. Acessando a Aplicação
@@ -123,24 +137,24 @@ Pronto! A aplicação está 100% funcional.
 
 -   **Parar a aplicação:**
     ```bash
-     docker-compose down
+    docker-compose down
     ```
 
 -   **Verificar os logs (para depuração):**
     ```bash
     # Logs do backend (Laravel)
-     docker-compose logs -f app
+    docker-compose logs -f app
 
     # Logs do frontend (Vue/Vite)
-     docker-compose logs -f frontend
+    docker-compose logs -f frontend
     ```
 
 -   **Acessar o terminal do contêiner:**
     ```bash
     # Acessar o contêiner do backend
-     docker-compose exec app bash
+    docker-compose exec app bash
 
     # Acessar o contêiner do frontend
-     docker-compose exec frontend sh
+    docker-compose exec frontend sh
     ```
 

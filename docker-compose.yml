@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # Serviço PHP/Laravel
   app:
     build:
       context: ./backend
@@ -12,13 +11,13 @@ services:
     working_dir: /var/www
     volumes:
       - ./backend:/var/www
+      - /var/www/vendor
     networks:
       - app-network
     depends_on:
       db:
         condition: service_healthy
 
-  # Serviço Node.js/Vue.js (para desenvolvimento)
   frontend:
     build:
       context: ./frontend
@@ -28,11 +27,10 @@ services:
       - "5173:5173"
     volumes:
       - ./frontend:/app
-      - /app/node_modules # Anônimo volume para evitar sobrescrita
+      - /app/node_modules
     networks:
       - app-network
 
-  # Servidor Web Nginx
   nginx:
     image: nginx:alpine
     container_name: app_nginx
@@ -47,7 +45,6 @@ services:
     networks:
       - app-network
 
-  # Banco de Dados (Exemplo com MySQL)
   db:
     image: mysql:8.0
     container_name: app_db
