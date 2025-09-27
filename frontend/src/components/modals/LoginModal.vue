@@ -21,7 +21,7 @@ const loginForm = reactive(
   }
 );
 
-const emit = defineEmits([
+defineEmits([
   'update:showLogin',
   'handleLogin',
 ]);

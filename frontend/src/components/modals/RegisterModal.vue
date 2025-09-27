@@ -26,7 +26,7 @@ const registerForm = reactive(
   }
 );
 
-const emit = defineEmits([
+defineEmits([
   'update:showRegister',
   'handleRegister',
 ]);

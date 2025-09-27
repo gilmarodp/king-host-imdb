@@ -17,10 +17,11 @@
     </header>
 
     <main class="flex-grow">
-      <component :is="activeComponent"
+      <component
+        :is="activeComponent"
         :favorites="favorites"
-         @add-favorite="addFavorite"
-         @remove-favorite="removeFavorite"
+        @add-favorite="addFavorite"
+        @remove-favorite="removeFavorite"
       />
     </main>
 
@@ -184,19 +185,27 @@ const handleLogin = async (loginForm) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(loginForm)
     });
+
     if (res.ok) {
       const data = await res.json();
       localStorage.setItem('token', data.token);
       user.value = data.user;
       showLogin.value = false;
       await fetchFavorites();
+
+      loginForm.email = '';
+      loginForm.password = '';
     } else {
       const errorData = await res.json();
       authError.value = errorData.message || (errorData.errors && Object.values(errorData.errors)[0][0]) || 'Ocorreu um erro de autenticação.';
+
+      loginForm.password = '';
     }
   } catch (error) {
     authError.value = 'Não foi possível conectar ao servidor.';
     console.error("Erro ao fazer login:", error);
+
+    loginForm.password = '';
   }
 };
 
@@ -210,12 +219,17 @@ const handleRegister = async (registerForm) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(registerForm)
     });
+
     if (res.ok) {
       const data = await res.json();
       localStorage.setItem('token', data.token);
       user.value = data.user;
       showRegister.value = false;
       await fetchFavorites();
+
+      registerForm.name = '';
+      registerForm.email = '';
+      registerForm.password = '';
     } else {
       const errorData = await res.json();
       if (res.status === 422) {
@@ -224,13 +238,18 @@ const handleRegister = async (registerForm) => {
             validationErrors[field] = errorData.errors[field][0];
           }
         }
+
+        registerForm.password = '';
       } else {
         authError.value = errorData.message || 'Ocorreu um erro no registro.';
+
+        registerForm.password = '';
       }
     }
   } catch (error) {
     authError.value = 'Não foi possível conectar ao servidor.';
     console.error("Erro ao registrar:", error);
+    registerForm.password = '';
   }
 };
 
