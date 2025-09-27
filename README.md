@@ -11,6 +11,32 @@ um backend em Laravel e um frontend em Vue.js.
 - **Tema Claro e Escuro:** Interface com modo claro e escuro para melhor experiência do usuário.
 - **Design Responsivo:** Layout adaptado para desktops, tablets e dispositivos móveis.
 
+## Demonstração em Vídeo
+
+Assista a uma breve demonstração da aplicação em funcionamento:
+
+[![Demonstração do King Host IMDB no YouTube](https://img.youtube.com/vi/glFqG6aqTt8/maxresdefault.jpg)](https://youtu.be/glFqG6aqTt8)
+
+## Telas da Aplicação
+
+<p align="center">
+  <img src="./screenshots/desktop-light.png" alt="Tela Inicial" width="45%">
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="./screenshots/desktop-dark.png" alt="Modo Escuro" width="45%">
+</p>
+<p align="center">
+  <em>Website Desktop light e dark mode.</em>
+</p>
+<p align="center">
+  <img src="./screenshots/mobile-light.png" alt="Tela Inicial" width="45%">
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="./screenshots/mobile-dark.png" alt="Modo Escuro" width="45%">
+</p>
+<p align="center">
+  <em>Website Mobile light e dark mode.</em>
+</p>
+
+
 ## Arquitetura
 
 - **Backend:** Laravel 12
