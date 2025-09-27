@@ -15,22 +15,26 @@ um backend em Laravel e um frontend em Vue.js.
 
 Assista a uma breve demonstração da aplicação em funcionamento:
 
-[![Demonstração do King Host IMDB no YouTube](https://img.youtube.com/vi/glFqG6aqTt8/maxresdefault.jpg)](https://youtu.be/glFqG6aqTt8)
+<p align="center">
+  <a href="https://youtu.be/glFqG6aqTt8" target="_blank">
+    <img src="https://conversaosemlimites.com/wp-content/uploads/2022/09/como-fazer-videos-no-youtube.png" alt="Demonstração do King Host IMDB no YouTube">
+  </a>
+</p>
 
 ## Telas da Aplicação
 
 <p align="center">
-  <img src="./screenshots/desktop-light.png" alt="Tela Inicial" width="45%">
+  <a href="./screenshots/desktop-dark.png" target="_blank"><img src="./screenshots/desktop-dark.png" alt="Modo Escuro" width="45%"></a>
   &nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="./screenshots/desktop-dark.png" alt="Modo Escuro" width="45%">
+  <a href="./screenshots/desktop-light.png" target="_blank"><img src="./screenshots/desktop-light.png" alt="Tela Inicial" width="45%"></a>
 </p>
 <p align="center">
   <em>Website Desktop light e dark mode.</em>
 </p>
 <p align="center">
-  <img src="./screenshots/mobile-light.png" alt="Tela Inicial" width="45%">
+  <a href="./screenshots/mobile-light.png" target="_blank"><img src="./screenshots/mobile-light.png" alt="Tela Inicial" width="45%"></a>
   &nbsp; &nbsp; &nbsp; &nbsp;
-  <img src="./screenshots/mobile-dark.png" alt="Modo Escuro" width="45%">
+  <a href="./screenshots/mobile-dark.png" target="_blank"><img src="./screenshots/mobile-dark.png" alt="Modo Escuro" width="45%"></a>
 </p>
 <p align="center">
   <em>Website Mobile light e dark mode.</em>
